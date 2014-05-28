@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<labels x="209" y="40" width="115" height="15" border="true">
+<text>Capacity = 10 pkg</text>
+</labels>
+<place id="Idle">
+<graphics>
+<position x="420.0" y="165.0"/>
+</graphics>
+<name>
+<value>Idle</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Process">
+<graphics>
+<position x="420.0" y="90.0"/>
+</graphics>
+<name>
+<value>Process</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Queue">
+<graphics>
+<position x="240.0" y="90.0"/>
+</graphics>
+<name>
+<value>Queue</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>10</value>
+</capacity>
+</place>
+<transition id="lambda">
+<graphics>
+<position x="150.0" y="90.0"/>
+</graphics>
+<name>
+<value>lambda</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="mu">
+<graphics>
+<position x="525.0" y="90.0"/>
+</graphics>
+<name>
+<value>mu</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T2">
+<graphics>
+<position x="345.0" y="90.0"/>
+</graphics>
+<name>
+<value>T2</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Idle to T2" source="Idle" target="T2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="417" y="177" curvePoint="false"/>
+<arcpath id="001" x="313" y="178" curvePoint="false"/>
+<arcpath id="002" x="313" y="118" curvePoint="false"/>
+<arcpath id="003" x="351" y="107" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="lambda to Wait" source="lambda" target="Queue">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="166" y="102" curvePoint="false"/>
+<arcpath id="001" x="237" y="102" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="mu to Idle" source="mu" target="Idle">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="541" y="102" curvePoint="false"/>
+<arcpath id="001" x="583" y="103" curvePoint="false"/>
+<arcpath id="002" x="583" y="178" curvePoint="false"/>
+<arcpath id="003" x="446" y="177" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Process to mu" source="Process" target="mu">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="446" y="102" curvePoint="false"/>
+<arcpath id="001" x="531" y="102" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T2 to Process" source="T2" target="Process">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="361" y="102" curvePoint="false"/>
+<arcpath id="001" x="417" y="102" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Wait to T2" source="Queue" target="T2">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="266" y="101" curvePoint="false"/>
+<arcpath id="001" x="352" y="97" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>

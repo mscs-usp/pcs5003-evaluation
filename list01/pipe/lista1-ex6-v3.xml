@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<place id="Failed-r">
+<graphics>
+<position x="270.0" y="120.0"/>
+</graphics>
+<name>
+<value>Failed-r</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Failed-s">
+<graphics>
+<position x="570.0" y="405.0"/>
+</graphics>
+<name>
+<value>Failed-s</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Ready-r">
+<graphics>
+<position x="750.0" y="315.0"/>
+</graphics>
+<name>
+<value>Ready-r</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Ready-s">
+<graphics>
+<position x="105.0" y="315.0"/>
+</graphics>
+<name>
+<value>Ready-s</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,2</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Received-r">
+<graphics>
+<position x="570.0" y="315.0"/>
+</graphics>
+<name>
+<value>Received-r</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Received-s">
+<graphics>
+<position x="270.0" y="210.0"/>
+</graphics>
+<name>
+<value>Received-s</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Send-r">
+<graphics>
+<position x="570.0" y="210.0"/>
+</graphics>
+<name>
+<value>Send-r</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Send-s">
+<graphics>
+<position x="270.0" y="315.0"/>
+</graphics>
+<name>
+<value>Send-s</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="Tm-r">
+<graphics>
+<position x="660.0" y="315.0"/>
+</graphics>
+<name>
+<value>Tm-r</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="tm-s">
+<graphics>
+<position x="180.0" y="210.0"/>
+</graphics>
+<name>
+<value>tm-s</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Tout-r">
+<graphics>
+<position x="180.0" y="120.0"/>
+</graphics>
+<name>
+<value>Tout-r</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Tout-s">
+<graphics>
+<position x="660.0" y="405.0"/>
+</graphics>
+<name>
+<value>Tout-s</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="tp-r">
+<graphics>
+<position x="660.0" y="210.0"/>
+</graphics>
+<name>
+<value>tp-r</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Tp-s">
+<graphics>
+<position x="180.0" y="315.0"/>
+</graphics>
+<name>
+<value>Tp-s</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="tx-r-failure">
+<graphics>
+<position x="420.0" y="120.0"/>
+</graphics>
+<name>
+<value>tx-r-failure</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="tx-r-success">
+<graphics>
+<position x="420.0" y="210.0"/>
+</graphics>
+<name>
+<value>tx-r-success</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Tx-s-failure">
+<graphics>
+<position x="420.0" y="405.0"/>
+</graphics>
+<name>
+<value>Tx-s-failure</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="Tx-s-success">
+<graphics>
+<position x="420.0" y="315.0"/>
+</graphics>
+<name>
+<value>Tx-s-success</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>0</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Failed-r to Tout-r" source="Failed-r" target="Tout-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="267" y="132" curvePoint="false"/>
+<arcpath id="001" x="196" y="132" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Failed-s to Tout-s" source="Failed-s" target="Tout-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="596" y="417" curvePoint="false"/>
+<arcpath id="001" x="666" y="417" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Ready-r to tp-r" source="Ready-r" target="tp-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="762" y="312" curvePoint="false"/>
+<arcpath id="001" x="762" y="222" curvePoint="false"/>
+<arcpath id="002" x="676" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Ready to Tp" source="Ready-s" target="Tp-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="131" y="327" curvePoint="false"/>
+<arcpath id="001" x="186" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Received-r to Tm-r" source="Received-r" target="Tm-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="596" y="327" curvePoint="false"/>
+<arcpath id="001" x="666" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Received-s to tm-s" source="Received-s" target="tm-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="267" y="222" curvePoint="false"/>
+<arcpath id="001" x="196" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Send-r to tx-r-failure" source="Send-r" target="tx-r-failure">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="582" y="207" curvePoint="false"/>
+<arcpath id="001" x="582" y="132" curvePoint="false"/>
+<arcpath id="002" x="436" y="132" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Send-r to tx-r-success" source="Send-r" target="tx-r-success">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="567" y="222" curvePoint="false"/>
+<arcpath id="001" x="436" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Send-s to Tx-s-success" source="Send-s" target="Tx-s-success">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="296" y="327" curvePoint="false"/>
+<arcpath id="001" x="426" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Send to Tx-fail" source="Send-s" target="Tx-s-failure">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="282" y="341" curvePoint="false"/>
+<arcpath id="001" x="283" y="418" curvePoint="false"/>
+<arcpath id="002" x="426" y="417" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Tm-r to Ready-r" source="Tm-r" target="Ready-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="676" y="327" curvePoint="false"/>
+<arcpath id="001" x="747" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="tm-s to Ready-s" source="tm-s" target="Ready-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="186" y="222" curvePoint="false"/>
+<arcpath id="001" x="117" y="222" curvePoint="false"/>
+<arcpath id="002" x="117" y="312" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Tout-r to Ready-r" source="Tout-r" target="Ready-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="186" y="132" curvePoint="false"/>
+<arcpath id="001" x="117" y="132" curvePoint="false"/>
+<arcpath id="002" x="117" y="72" curvePoint="false"/>
+<arcpath id="003" x="822" y="72" curvePoint="false"/>
+<arcpath id="004" x="822" y="327" curvePoint="false"/>
+<arcpath id="005" x="777" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Tout to Ready" source="Tout-s" target="Ready-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="676" y="417" curvePoint="false"/>
+<arcpath id="001" x="718" y="418" curvePoint="false"/>
+<arcpath id="002" x="718" y="463" curvePoint="false"/>
+<arcpath id="003" x="118" y="463" curvePoint="false"/>
+<arcpath id="004" x="117" y="341" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="tp-r to Send-r" source="tp-r" target="Send-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="666" y="222" curvePoint="false"/>
+<arcpath id="001" x="596" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Tp to Send" source="Tp-s" target="Send-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="196" y="327" curvePoint="false"/>
+<arcpath id="001" x="267" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Tx-fail to Failed" source="Tx-s-failure" target="Failed-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="436" y="417" curvePoint="false"/>
+<arcpath id="001" x="567" y="417" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="tx-r-failure to Failed-r" source="tx-r-failure" target="Failed-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="426" y="132" curvePoint="false"/>
+<arcpath id="001" x="296" y="132" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="tx-r-success to Received-s" source="tx-r-success" target="Received-s">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="426" y="222" curvePoint="false"/>
+<arcpath id="001" x="296" y="222" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Tx to Received" source="Tx-s-success" target="Received-r">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="436" y="327" curvePoint="false"/>
+<arcpath id="001" x="567" y="327" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>

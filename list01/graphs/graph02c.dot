@@ -1,0 +1,7 @@
+digraph finite_state_machine {
+    size="8,5"
+    node [shape = circle];
+    0 -> 0 [ label = "1" ];
+    1 -> 1 [ label = "1" ];
+    2 -> 2 [ label = "1" ];
+}

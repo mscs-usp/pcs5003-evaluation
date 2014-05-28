@@ -1,0 +1,44 @@
+digraph finite_state_machine {
+    size="12,5"
+    rankdir="TD";
+    node [shape = box];
+    
+    /* pipe-vertices */
+    20010 [label="(2, 0, 0, 1, 0) - M0"];
+    10110 [label="(1, 0, 1, 1, 0) - M1"];
+    11010 [label="(1, 1, 0, 1, 0) - M2"];
+    00210 [label="(0, 0, 2, 1, 0) - M3"];
+    01110 [label="(0, 1, 1, 1, 0) - M4"];
+    02010 [label="(0, 2, 0, 1, 0) - M5"];
+    00101 [label="(0, 0, 1, 0, 1) - M6"];
+    01001 [label="(0, 1, 0, 0, 1) - M7"];
+    
+    /* manual-vertices */
+    10001 [label="(1, 0, 0, 0, 1) - M8"];
+    
+    /* pipe-edjes */
+    20010 -> 10110 [label = "T2 (b)"];
+    20010 -> 11010 [label = "T1 (a)"];
+    
+    10110 -> 00210 [label = "T2 (b)"];
+    10110 -> 01110 [label = "T1 (a)"];
+    
+    11010 -> 01110 [label = "T2 (b)"];
+    11010 -> 02010 [label = "T1 (a)"];
+
+    00210 -> 00101 [label = "T4 (lambda2)"];
+    
+    01110 -> 00101 [label = "T3 (lambda1)"];
+    01110 -> 01001 [label = "T4 (lambda2)"];
+    
+    02010 -> 01001 [label = "T3 (lambda1)"];
+    
+    /* manual-edjes */
+    11010 -> 10001 [label = "T3 (b)"];
+    10110 -> 10001 [label = "T2 (b)"];
+    
+    10001 -> 20010 [label = "T5 (mu1)"];
+    
+    00101 -> 10110 [label = "T5 (mu1)"];
+    01001 -> 11010 [label = "T5 (mu1)"];
+}

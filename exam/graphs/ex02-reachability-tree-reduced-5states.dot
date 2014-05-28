@@ -1,0 +1,50 @@
+digraph bintree {
+    node [shape = rectangle];
+    
+    M0 [label="(0, 1, 1, 1, 0) - M0"];
+    M1 [label="(0, 0, 1, 0, 1) - M1"];
+    M2 [label="(0, 1, 0, 0, 1) - M2"];
+    M3 [label="(0, 0, 2, 1, 0) - M3"];
+    M4 [label="(0, 2, 0, 1, 0) - M4"];
+    M0_e [label="M0"];
+    M1_e [label="M1"];
+    M2_e [label="M2"];
+
+    M0 -> M1 [label = "T3 (lambda1)"];
+    M0 -> M2 [label = "T4 (lambda2)"];
+    
+    M1 -> M0_e [label = "T5^T1 (mu1*alfa)"];
+    M1 -> M3 [label = "T5^T2 (mu1*beta)"];
+
+    M2 -> M0_e [label = "T5^T2 (mu1*beta)"];
+    M2 -> M4 [label = "T5^T1 (mu1*alfa)"];
+
+    M3 -> M1_e [label = "T4 (lambda2)"];
+    M4 -> M2_e [label = "T3 (lambda1)"];
+}
+
+/*
+digraph finite_state_machine {
+    size="12,5"
+    rankdir="TD";
+    node [shape = circle];
+
+    M0 [label="(0, 1, 1, 1, 0) - M0"];
+    M1 [label="(0, 1, 0, 0, 1) - M1"];
+    M2 [label="(0, 0, 1, 0, 1) - M2"];
+    M3 [label="(0, 2, 0, 1, 0) - M3"];
+    M4 [label="(0, 0, 2, 1, 0) - M4"];
+
+    M0 -> M1 [label = "T4 (lambda2)"];
+    M0 -> M2 [label = "T3 (lambda1)"];
+    
+    M4 -> M2 [label = "T4 (lambda2)"];
+    M3 -> M1 [label = "T3 (lambda1)"];
+    
+    M1 -> M0 [label = "T5^T2 (mu1*beta)"];
+    M1 -> M3 [label = "T5^T1 (mu1*alfa)"];
+
+    M2 -> M0 [label = "T5^T1 (mu1*alfa)"];
+    M2 -> M4 [label = "T5^T2 (mu1*beta)"];
+}
+*/

@@ -1,0 +1,177 @@
+METHOD 1 (WORKING)
+------------------
+
+a = 0.4
+b = 0.6
+l1 = 10
+l2 = 15
+m1 = 20
+Q = matrix(RR, 5, [
+  [-l1-l2,      l1,     l2,      0,      0],
+  [  m1*a,     -m1,      0,   m1*b,      0],
+  [  m1*b,       0,    -m1,      0,   m1*a],
+  [     0,      l2,      0,    -l2,      0],
+  [     0,       0,     l1,      0,    -l1]
+  ])
+
+I = matrix(5, 5, 1);
+s0, s1, s2, s3, s4 = var('s0, s1, s2, s3, s4')
+#eqs = vector((s0, s1, s2, s3, s4)) * (Q-I); eqs[0]; eqs[1]; eqs[2]; eqs[3]; eqs[4]
+eqs = vector((s0, s1, s2, s3, s4)) * Q; eqs[0]; eqs[1]; eqs[2]; eqs[3]; eqs[4]
+solve([
+  eqs[0] == 0,
+  eqs[1] == 0,
+  eqs[2] == 0,
+  eqs[3] == 0,
+  eqs[4] == 0,
+  s0+s1+s2+s3+s4==1], s0, s1, s2, s3, s4)
+
+
+
+
+
+a = 0.4
+b = 0.6
+l1 = 10
+l2 = 15
+m1 = 20
+Q = matrix(RR, 5, [
+  [-l1-l2,      l1,     l2,      0,      0],
+  [  m1*a,     -m1,      0,   m1*b,      0],
+  [  m1*b,       0,    -m1,      0,   m1*a],
+  [     0,      l2,      0,    -l2,      0],
+  [     0,       0,     l1,      0,    -l1]
+  ])
+
+Q.eigenvalues()
+D, V = Q.eigenmatrix_left() # left eigen decomposition D # diagonal matrix of eigen values 
+EigVecForEigValue1 = V[0]; EigVecForEigValue1
+EigVecForEigValue1.norm(1)
+EigVecForEigValue1 / EigVecForEigValue1.norm(1)
+
+
+
+
+
+METHOD 2
+--------
+
+a = 0.4
+b = 0.6
+l1 = 10
+l2 = 15
+m1 = 20
+var('p0 p1 p2 p3 p4')
+eq0 = 0==(-l1-l2)*p0 +     0*p1 +     0*p2 + l2*p3 +  l1*p4
+eq1 = 0==       0*p0 -    l2*p1 +     0*p2 +  0*p3 +  l2*p4
+eq2 = 0==       0*p0 +     0*p1 -    l1*p2 + l1*p3 +   0*p4
+eq3 = 0==    m1*b*p0 +     0*p1 +  m1*a*p2 - m1*p3 +   0*p4
+eq4 = 0==    m1*a*p0 +  m1*b*p1 +     0*p2 +  0*p3 + -m1*p4
+eq5 = 1==p0+p1+p2+p3+p4
+solve([eq0, eq1, eq2, eq3, eq4, eq5], p0, p1, p2, p3, p4)
+
+  
+  
+  
+# -----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#N = 12
+#P = random_matrix(QQ, N, N)
+
+alfa = 0.4
+beta = 0.6
+lambda1 = 10
+lambda2 = 15
+mu1 = 20
+
+T1 = alfa
+T2 = beta
+T3 = lambda1
+T4 = lambda2
+T5 = mu1
+
+P = matrix(RDF, 8, [
+  [  0,  T1,  T1,   0,   0,   0,   0,   0,  ], # M0
+  [  0,   0,   0,  T2,  T1,   0,   0,   0,  ], # M1
+  [  0,   0,   0,   0,  T2,  T1,   0,   0,  ], # M2
+  [  0,   0,   0,   0,   0,   0,  T4,   0,  ], # M3
+  [  0,   0,   0,   0,   0,   0,  T3,  T4,  ], # M4
+  [  0,   0,   0,   0,   0,   0,   0,  T3,  ], # M5
+  [  0,  T5,   0,   0,   0,   0,   0,   0,  ], # M6
+  [  0,   0,  T5,   0,   0,   0,   0,   0,  ] # M7
+  # M0,  M1,  M2,  M3,  M4,  M5,  M6,  M7
+  ])
+eigen = P.eigenvectors_left()
+
+
+
+P = none
+P = matrix(QQ, 4, [
+  0.0,   1.0,   0.0,   0.0,
+  0.0,   0.1,   0.9,   0.0,
+  0.0,   0.01,  0.18,  0.81,
+  0.001, 0.027, 0.243, 0.729])
+eigen = P.eigenvectors_left()
+pi = [k[1][0] for k in eigen if k[0] == 1][0]  # Find eigenvector corresponding to unit eigenvalue
+pi = [k / sum(pi) for k in pi]  # normalise eigenvector
+
+
+import numpy
+p=0.1
+P = numpy.array([
+  [0.0,  1.0,          0,            0.0],
+  [0.0,  p,            1-p,          0.0],
+  [0.0,  p^2,          2*p*(1-p),    (1-p)^2],
+  [p^3,  3*p^2*(1-p),  3*p*(1-p)^2,  (1-p)^3]])
+P = matrix(4, n)
+
+P = none
+p=0.1
+P = matrix(RDF, 4, [
+  0.0,  1.0,          0,            0.0,
+  0.0,  p,            1-p,          0.0,
+  0.0,  p^2,          2*p*(1-p),    (1-p)^2,
+  p^3,  3*p^2*(1-p),  3*p*(1-p)^2,  (1-p)^3])
+eigen = P.eigenvectors_left()
+pi = [k[1][0] for k in eigen if k[0] == 1][0]  # Find eigenvector corresponding to unit eigenvalue
+pi = [k / sum(pi) for k in pi]  # normalise eigenvector
+
+  
+  
+#P = matrix(QQ, 4, [
+#  0.0,   1.0,   0.0,   0.0,
+#  0.0,   0.1,   0.9,   0.0,
+#  0.0,   0.01,  0.18,  0.81,
+#  0.001, 0.027, 0.243, 0.729])
+#eigen = P.eigenvectors_left()
+#pi = [k[1][0] for k in eigen if k[0] == 1][0]  # Find eigenvector corresponding to unit eigenvalue
+#pi = [k / sum(pi) for k in pi]  # normalise eigenvector

@@ -1,0 +1,170 @@
+# http://sage.math.canterbury.ac.nz/home/pub/73/
+# http://users.aims.ac.za/~beezer/course.html
+
+
+METHOD 1 (WORKING)
+------------------
+
+a = 0.2
+s = 0.6
+P = matrix(RR, 4, [
+  [(1-a)*(1-a), (1-a)*a,        a*(1-a),        a*a],
+  [(1-a)*s,     (1-a)*(1-s),    a*s,            a*(1-s)],
+  [s*(1-a),     s*a,            (1-s)*(1-a),    (1-s)*a],
+  [0,           s*(1-s),        (1-s)*s,        (1-s)*(1-s)+s*s]
+  ]);
+# P; P.parent()
+
+I = matrix(4, 4, 1); # I; I.parent()
+# P-I; (P-I).parent()
+s0, s1, s2, s3 = var('s0, s1, s2, s4')
+eqs = vector((s0, s1, s2, s3)) * (P-I); eqs[0]; eqs[1]; eqs[2]; eqs[3]
+qpis = solve([
+  eqs[0] == 0,
+  eqs[1] == 0,
+  eqs[2] == 0,
+  eqs[3] == 0,
+  s0+s1+s2+s3==1], s0, s1, s2, s3)
+
+pis = FreeModule(RDF, qpis);
+
+
+
+
+Questao d:
+----------
+a = 0.2
+s = 0.6
+p0 = 0.51064
+p1 = 0.19149
+p2 = 0.19149
+p3 = 0.10638
+
+vc = var('vc')
+eq0 = p3==p0*a*a + p1*a*(1-s) + p2*(1-s)*a + p3*((1-s)*(1-s)+vc)
+solve([eq0], vc)
+
+p0*a*a + p1*a*(1-s) + p2*(1-s)*a + p3*((1-s)*(1-s)+s*s)
+
+
+s = 0.6
+2*s*(1-s)+(1-s)*(1-s)
+
+# -------------------------
+
+
+a = 0.2
+s = 0.6
+P = matrix(RR, 4, [
+  [(1-a)*(1-a), (1-a)*a,        a*(1-a),        a*a],
+  [(1-a)*s,     (1-a)*(1-s),    a*s,            a*(1-s)],
+  [s*(1-a),     s*a,            (1-s)*(1-a),    (1-s)*a],
+  [0,           s*(1-s),        (1-s)*s,        (1-s)*(1-s)+s*s]
+  ]);
+
+pis = [P' - eye(size(P)); ones(1, length(P))] \ [zeros(length(P), 1); 1]
+
+I = matrix(4, 4, 1);
+v = matrix(QQ, [1, 1, 1, 1])
+answer = matrix(QQ, [0, 0, 0, 0, 1])
+pis = [P.transpose() - I, v] \ answer.transpose()
+x = P \ answer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+METHOD 2
+--------
+
+a = 0.2
+s = 0.6
+P = matrix(QQ, 4, [
+  [(1-a)*(1-a), (1-a)*a,        a*(1-a),        a*a],
+  [(1-a)*s,     (1-a)*(1-s),    a*s,            a*(1-s)],
+  [s*(1-a),     s*a,            (1-s)*(1-a),    (1-s)*a],
+  [0,           s*(1-s),        (1-s)*s,        (1-s)*(1-s)+s*s]
+  ]);
+
+P.eigenvalues()
+D, V = P.eigenmatrix_left() # left eigen decomposition D # diagonal matrix of eigen values 
+EigVecForEigValue1 = V[0]; EigVecForEigValue1
+EigVecForEigValue1.norm(1)
+EigVecForEigValue1 / EigVecForEigValue1.norm(1)
+
+
+
+METHOD 3
+--------
+
+a = 0.2
+s = 0.6
+P = matrix(QQ, 4, [
+  [(1-a)*(1-a), (1-a)*a,        a*(1-a),        a*a],
+  [(1-a)*s,     (1-a)*(1-s),    a*s,            a*(1-s)],
+  [s*(1-a),     s*a,            (1-s)*(1-a),    (1-s)*a],
+  [0,           s*(1-s),        (1-s)*s,        (1-s)*(1-s)+s*s]
+  ]);
+
+initial = matrix(QQ,[1, 1, 1, 1]).transpose()
+stable=P.eigenmatrix_right()[1].column(0)
+proportion = (sum(initial)[0]/sum(stable))*stable
+[N(proportion[i], digits=6) for i in range(len(proportion))]
+
+P.eigenvalues()
+
+for i in range(40):
+    print "Power", i, ":", N(((P^i)*initial).transpose(), digits=6)
+    
+I = matrix(4, 4, 1);
+M = P.transpose()-I
+ones = matrix(4, 1, 1);
+
+
+
+P.eigenvalues()
+
+
+
+METHOD 4
+--------
+
+pis = [P' - eye(size(P)); ones(1,length(P))] \ [zeros(length(P),1);1]
+
+a = 0.2
+s = 0.6
+P = matrix(QQ, 4, [
+  [(1-a)*(1-a), (1-a)*a,        a*(1-a),        a*a],
+  [(1-a)*s,     (1-a)*(1-s),    a*s,            a*(1-s)],
+  [s*(1-a),     s*a,            (1-s)*(1-a),    (1-s)*a],
+  [0,           s*(1-s),        (1-s)*s,        (1-s)*(1-s)+s*s]
+  ]);
+
+uns = matrix(QQ,[1, 1, 1, 1]).transpose()
+I = matrix(4, 4, 1); I; I.parent()
+pis = [P

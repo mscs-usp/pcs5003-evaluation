@@ -1,0 +1,10 @@
+library("markovchain")
+
+mcWeather <- new("markovchain", states = c("sunny", "cloudy", "rain"),
+  transitionMatrix = matrix(data = c(0.70, 0.2,0.1,
+    0.3,0.4, 0.3,
+    0.2,0.45,0.35), 3,3, byrow = TRUE),
+  name = "Weather")
+
+initialState <- c(0,1,0)
+after2Days <- initialState * (mcWeather * mcWeather)

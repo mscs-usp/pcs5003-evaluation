@@ -1,0 +1,30 @@
+digraph finite_state_machine {
+    size="12.5"
+    rankdir="TD";
+    node [shape = circle];
+
+    00 [label="(0, 0) - M0"];
+    01 [label="(0, 1) - M1"];
+    10 [label="(1, 0) - M2"];
+    11 [label="(1, 1) - M3"];
+    
+    00 -> 00 [label = "(1-a)*(1-a)"];
+    00 -> 01 [label = "(1-a)*a"];
+    00 -> 10 [label = "a*(1-a)"];
+    00 -> 11 [label = "a*a"];
+    
+    01 -> 00 [label = "(1-a)*s"];
+    01 -> 01 [label = "(1-a)*(1-s)"];
+    01 -> 10 [label = "a*s"];
+    01 -> 11 [label = "a*(1-s)"];
+    
+    10 -> 00 [label = "s*(1-a)"];
+    10 -> 01 [label = "s*a"];
+    10 -> 10 [label = "(1-s)*(1-a)"];
+    10 -> 11 [label = "(1-s)*a"];
+    
+    /* 11 -> 00 [label = "0"]; */
+    11 -> 01 [label = "s*(1-s)"];
+    11 -> 10 [label = "(1-s)*s"];
+    11 -> 11 [label = "(1-s)*(1-s)+s*s"];
+}

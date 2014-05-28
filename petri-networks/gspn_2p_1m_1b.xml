@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+<net id="Net-One" type="P/T net">
+<token id="Default" enabled="true" red="0" green="0" blue="0"/>
+<place id="Acessando">
+<graphics>
+<position x="450.0" y="495.0"/>
+</graphics>
+<name>
+<value>Acessando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Acessando0">
+<graphics>
+<position x="210.0" y="495.0"/>
+</graphics>
+<name>
+<value>Acessando0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="BusLivre">
+<graphics>
+<position x="330.0" y="360.0"/>
+</graphics>
+<name>
+<value>BusLivre</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Processando">
+<graphics>
+<position x="450.0" y="135.0"/>
+</graphics>
+<name>
+<value>Processando</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="Processando0">
+<graphics>
+<position x="210.0" y="135.0"/>
+</graphics>
+<name>
+<value>Processando0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,1</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="ReqAcesso">
+<graphics>
+<position x="450.0" y="315.0"/>
+</graphics>
+<name>
+<value>ReqAcesso</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<place id="ReqAcesso0">
+<graphics>
+<position x="210.0" y="315.0"/>
+</graphics>
+<name>
+<value>ReqAcesso0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</name>
+<initialMarking>
+<value>Default,0</value>
+<graphics>
+<offset x="0.0" y="0.0"/>
+</graphics>
+</initialMarking>
+<capacity>
+<value>0</value>
+</capacity>
+</place>
+<transition id="T0">
+<graphics>
+<position x="210.0" y="405.0"/>
+</graphics>
+<name>
+<value>T0</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="T1">
+<graphics>
+<position x="450.0" y="405.0"/>
+</graphics>
+<name>
+<value>T1</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>false</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TAcesso">
+<graphics>
+<position x="450.0" y="225.0"/>
+</graphics>
+<name>
+<value>TAcesso</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TAcesso0">
+<graphics>
+<position x="210.0" y="225.0"/>
+</graphics>
+<name>
+<value>TAcesso0</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TProcessamento">
+<graphics>
+<position x="450.0" y="585.0"/>
+</graphics>
+<name>
+<value>TProcessamento</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<transition id="TProcessamento0">
+<graphics>
+<position x="210.0" y="585.0"/>
+</graphics>
+<name>
+<value>TProcessamento0</value>
+<graphics>
+<offset x="-5.0" y="35.0"/>
+</graphics>
+</name>
+<orientation>
+<value>90</value>
+</orientation>
+<rate>
+<value>1.0</value>
+</rate>
+<timed>
+<value>true</value>
+</timed>
+<infiniteServer>
+<value>false</value>
+</infiniteServer>
+<priority>
+<value>1</value>
+</priority>
+</transition>
+<arc id="Acessando0 to TProcessamento0" source="Acessando0" target="TProcessamento0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="521" curvePoint="false"/>
+<arcpath id="001" x="221" y="591" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Acessando to TProcessamento" source="Acessando" target="TProcessamento">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="461" y="521" curvePoint="false"/>
+<arcpath id="001" x="461" y="591" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to T0" source="BusLivre" target="T0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="327" y="372" curvePoint="false"/>
+<arcpath id="001" x="253" y="373" curvePoint="false"/>
+<arcpath id="002" x="226" y="412" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="P3 to T1" source="BusLivre" target="T1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="356" y="372" curvePoint="false"/>
+<arcpath id="001" x="433" y="373" curvePoint="false"/>
+<arcpath id="002" x="456" y="411" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Processando0 to TAcesso0" source="Processando0" target="TAcesso0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="161" curvePoint="false"/>
+<arcpath id="001" x="221" y="231" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="Processando to TAcesso" source="Processando" target="TAcesso">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="461" y="161" curvePoint="false"/>
+<arcpath id="001" x="461" y="231" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="ReqAcesso0 to T0" source="ReqAcesso0" target="T0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="220" y="341" curvePoint="false"/>
+<arcpath id="001" x="216" y="411" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="ReqAcesso to T1" source="ReqAcesso" target="T1">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="462" y="341" curvePoint="false"/>
+<arcpath id="001" x="466" y="412" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T0 to Acessando0" source="T0" target="Acessando0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="421" curvePoint="false"/>
+<arcpath id="001" x="221" y="492" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="T1 to Acessando" source="T1" target="Acessando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="461" y="421" curvePoint="false"/>
+<arcpath id="001" x="461" y="492" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TAcesso0 to ReqAcesso0" source="TAcesso0" target="ReqAcesso0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="221" y="241" curvePoint="false"/>
+<arcpath id="001" x="221" y="312" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TAcesso to ReqAcesso" source="TAcesso" target="ReqAcesso">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="461" y="241" curvePoint="false"/>
+<arcpath id="001" x="461" y="312" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TProcessamento0 to P3" source="TProcessamento0" target="BusLivre">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="226" y="602" curvePoint="false"/>
+<arcpath id="001" x="223" y="628" curvePoint="false"/>
+<arcpath id="002" x="328" y="628" curvePoint="false"/>
+<arcpath id="003" x="341" y="386" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TProcessamento0 to Processando0" source="TProcessamento0" target="Processando0">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="216" y="601" curvePoint="false"/>
+<arcpath id="001" x="208" y="628" curvePoint="false"/>
+<arcpath id="002" x="88" y="628" curvePoint="false"/>
+<arcpath id="003" x="88" y="103" curvePoint="false"/>
+<arcpath id="004" x="223" y="103" curvePoint="false"/>
+<arcpath id="005" x="222" y="132" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TProcessamento to P3" source="TProcessamento" target="BusLivre">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="456" y="601" curvePoint="false"/>
+<arcpath id="001" x="463" y="628" curvePoint="false"/>
+<arcpath id="002" x="358" y="628" curvePoint="false"/>
+<arcpath id="003" x="342" y="386" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+<arc id="TProcessamento to Processando" source="TProcessamento" target="Processando">
+<graphics/>
+<inscription>
+<value>Default,1</value>
+<graphics/>
+</inscription>
+<tagged>
+<value>false</value>
+</tagged>
+<arcpath id="000" x="466" y="602" curvePoint="false"/>
+<arcpath id="001" x="478" y="628" curvePoint="false"/>
+<arcpath id="002" x="598" y="628" curvePoint="false"/>
+<arcpath id="003" x="598" y="103" curvePoint="false"/>
+<arcpath id="004" x="463" y="103" curvePoint="false"/>
+<arcpath id="005" x="462" y="132" curvePoint="false"/>
+<type value="normal"/>
+</arc>
+</net>
+</pnml>
